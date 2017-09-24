@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.a1constraintsandbutterknife.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_vertical_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_vertical_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_horizontal_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline_horizontal_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <TextView
+        android:id="@+id/center_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/top_left_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Top_Left"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/top_right_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Top_Right"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/Bottom_left_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bottom_Left"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <TextView
+        android:id="@+id/Bottom_right_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bottom_Right"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <TextView
+        android:id="@+id/top_center_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Top_Center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/bottom_center_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bottom_Center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+    <TextView
+        android:id="@+id/left_center_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Left_Center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/right_center_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Right_Center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/q1_center_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Q1_Center"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline_horizontal_1"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline_vertical_2"
+        app:layout_constraintRight_toRightOf="@+id/guideline_vertical_2"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_1" />
+
+    <TextView
+        android:id="@+id/q2_center_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Q2_Center"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline_horizontal_1"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline_vertical_1"
+        app:layout_constraintRight_toRightOf="@+id/guideline_vertical_1"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_1" />
+
+    <TextView
+        android:id="@+id/q3_center_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Q3_Center"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline_horizontal_2"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline_vertical_1"
+        app:layout_constraintRight_toRightOf="@+id/guideline_vertical_1"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_2" />
+
+    <TextView
+        android:id="@+id/q4_center_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Q4_Center"
+        app:layout_constraintBottom_toBottomOf="@+id/guideline_horizontal_2"
+        app:layout_constraintLeft_toLeftOf="@+id/guideline_vertical_2"
+        app:layout_constraintRight_toRightOf="@+id/guideline_vertical_2"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_2" />
+
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Btn_Submit"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_horizontal_2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/center_textView" />
+
+    <Button
+        android:id="@+id/revert_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Btn_Revert"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_horizontal_2" />
+
+</android.support.constraint.ConstraintLayout>
