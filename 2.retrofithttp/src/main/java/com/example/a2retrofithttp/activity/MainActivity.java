@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.example.a2retrofithttp.Model.Movie;
 import com.example.a2retrofithttp.Model.MoviesResponse;
 import com.example.a2retrofithttp.R;
+import com.example.a2retrofithttp.adapter.MoviesAdapter;
 import com.example.a2retrofithttp.rest.ApiClient;
 import com.example.a2retrofithttp.rest.ApiInterface;
 
@@ -28,9 +29,13 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getSimpleName();
-
     // TODO - insert your themoviedb.org API KEY here
-    private final static String API_KEY = "4128f4e96dc7b1c7177c0749abbe6926";
+    private final static String API_KEY = "Put Your API Key :)";
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+    private MoviesAdapter adapter;
+    private List<Movie> movies;
+    private ApiInterface apiInterface;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,11 +60,12 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.movies_recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView = (RecyclerView) findViewById(R.id.movies_recycler_view);
+        layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setHasFixedSize(true);
 
-
-        ApiInterface apiInterface = ApiClient.getClient().create(ApiInterface.class);
+        apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
 
         Call<MoviesResponse> call = apiInterface.getTopRatedMovies(API_KEY);
         call.enqueue(new Callback<MoviesResponse>() {
@@ -67,6 +73,10 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<MoviesResponse> call, Response<MoviesResponse> response) {
                 List<Movie> movies = response.body().getResults();
                 Log.d(TAG, "Number of movies received: " + movies.size());
+                Log.d(TAG, "Response Received :--> " + movies);
+                adapter = new MoviesAdapter(getApplicationContext(), movies);
+                recyclerView.setAdapter(adapter);
+
             }
 
             @Override
@@ -75,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 Log.e(TAG, t.toString());
             }
         });
+
 
     }
 
