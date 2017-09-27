@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,9 +20,14 @@ import com.example.a3retrofithttprxjava.model.MoviesResponse;
 import com.example.a3retrofithttprxjava.rest.ApiClient;
 import com.example.a3retrofithttprxjava.rest.ApiInterface;
 
+import org.reactivestreams.Subscriber;
+import org.reactivestreams.Subscription;
+
 import java.util.List;
 
 import io.reactivex.Flowable;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -64,7 +70,29 @@ public class MainActivity extends AppCompatActivity {
 
         apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
         Flowable<MoviesResponse> moviesResponseFlowable = apiInterface.getTopRatedMovies(API_KEY);
+        moviesResponseFlowable.subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Subscriber<MoviesResponse>() {
+                    @Override
+                    public void onSubscribe(Subscription s) {
+                        Log.i(TAG, "Rx Java" + "onSubscribe");
+                    }
 
+                    @Override
+                    public void onNext(MoviesResponse moviesResponse) {
+                        Log.i(TAG, "Rx Java" + "onNext");
+                    }
+
+                    @Override
+                    public void onError(Throwable t) {
+                        Log.i(TAG, "Rx Java" + "onError : -" + t.toString());
+                    }
+
+                    @Override
+                    public void onComplete() {
+                        Log.i(TAG, "Rx Java" + "onComplete");
+                    }
+                });
     }
 
     @Override
