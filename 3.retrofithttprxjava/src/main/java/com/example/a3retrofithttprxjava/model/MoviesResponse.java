@@ -50,4 +50,14 @@ public class MoviesResponse {
     public void setTotalPages(int totalPages) {
         this.totalPages = totalPages;
     }
+
+    @Override
+    public String toString() {
+        return "MoviesResponse{" +
+                "page=" + page +
+                ", results=" + results +
+                ", totalResults=" + totalResults +
+                ", totalPages=" + totalPages +
+                '}';
+    }
 }

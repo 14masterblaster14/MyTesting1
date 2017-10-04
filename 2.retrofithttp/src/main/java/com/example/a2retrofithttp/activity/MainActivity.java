@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
     // TODO - insert your themoviedb.org API KEY here
     private final static String API_KEY = "Put Your API Key :)";
+    //private final static String API_KEY = "";
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private MoviesAdapter adapter;

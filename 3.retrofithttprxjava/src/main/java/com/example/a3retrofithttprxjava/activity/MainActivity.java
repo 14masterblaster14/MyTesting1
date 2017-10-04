@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,15 +24,17 @@ import org.reactivestreams.Subscription;
 
 import java.util.List;
 
-import io.reactivex.Flowable;
+import io.reactivex.Observable;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+    //private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = "@MasterBlaster";
     // TODO - insert your themoviedb.org API KEY here
-    private final static String API_KEY = "Put Your API Key :)";
+    //private final static String API_KEY = "Put Your API Key :)";
+    private final static String API_KEY = "4128f4e96dc7b1c7177c0749abbe6926";
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private MoviesAdapter adapter;
@@ -69,30 +70,34 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
 
         apiInterface = ApiClient.getApiClient().create(ApiInterface.class);
-        Flowable<MoviesResponse> moviesResponseFlowable = apiInterface.getTopRatedMovies(API_KEY);
-        moviesResponseFlowable.subscribeOn(Schedulers.newThread())
+        Observable<MoviesResponse> moviesResponseObservable = apiInterface.getTopRatedMovies(API_KEY);
+        moviesResponseObservable
+                .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Subscriber<MoviesResponse>() {
+
                     @Override
                     public void onSubscribe(Subscription s) {
-                        Log.i(TAG, "Rx Java" + "onSubscribe");
+
                     }
 
                     @Override
                     public void onNext(MoviesResponse moviesResponse) {
-                        Log.i(TAG, "Rx Java" + "onNext");
+
                     }
 
                     @Override
                     public void onError(Throwable t) {
-                        Log.i(TAG, "Rx Java" + "onError : -" + t.toString());
+
                     }
 
                     @Override
                     public void onComplete() {
-                        Log.i(TAG, "Rx Java" + "onComplete");
+
                     }
                 });
+
+
     }
 
     @Override
