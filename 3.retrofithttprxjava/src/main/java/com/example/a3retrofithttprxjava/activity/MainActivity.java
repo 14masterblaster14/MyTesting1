@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,13 +20,13 @@ import com.example.a3retrofithttprxjava.model.MoviesResponse;
 import com.example.a3retrofithttprxjava.rest.ApiClient;
 import com.example.a3retrofithttprxjava.rest.ApiInterface;
 
-import org.reactivestreams.Subscriber;
-import org.reactivestreams.Subscription;
-
 import java.util.List;
 
 import io.reactivex.Observable;
+import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 public class MainActivity extends AppCompatActivity {
@@ -74,30 +75,25 @@ public class MainActivity extends AppCompatActivity {
         moviesResponseObservable
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(new Subscriber<MoviesResponse>() {
+                .subscribe(new Observer<MoviesResponse>() {
 
                     @Override
-                    public void onSubscribe(Subscription s) {
-
+                    public void onSubscribe(@NonNull Disposable d) {
+                        Log.i(TAG, "onSubscribe : ");
                     }
-
                     @Override
-                    public void onNext(MoviesResponse moviesResponse) {
-
+                    public void onNext(@NonNull MoviesResponse moviesResponse) {
+                        Log.i(TAG, "onNext : " + moviesResponse.toString());
                     }
-
                     @Override
-                    public void onError(Throwable t) {
-
+                    public void onError(@NonNull Throwable e) {
+                        Log.i(TAG, "onError : ");
                     }
-
                     @Override
                     public void onComplete() {
-
+                        Log.i(TAG, "onComplete : ");
                     }
                 });
-
-
     }
 
     @Override
