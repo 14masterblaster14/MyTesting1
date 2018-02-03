@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="user"
+            type="com.example.a8databinding.User" />
+    </data>
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.example.a8databinding.UserActivity">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/guideline_vertical_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.21" />
+
+        <TextView
+            android:id="@+id/firstNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/firstname"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/firstName"
+            app:layout_constraintLeft_toLeftOf="@id/guideline_vertical_1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/firstName"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:text="@{user.firstName}"
+            app:layout_constraintBottom_toTopOf="@id/lastNameLabel"
+            app:layout_constraintLeft_toLeftOf="@id/guideline_vertical_1"
+            app:layout_constraintTop_toBottomOf="@id/firstNameLabel" />
+
+
+        <TextView
+            android:id="@+id/lastNameLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lastname"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/lastName"
+            app:layout_constraintLeft_toLeftOf="@id/guideline_vertical_1"
+            app:layout_constraintTop_toBottomOf="@id/firstName" />
+
+        <TextView
+            android:id="@+id/lastName"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:text="@{user.lastName}"
+            app:layout_constraintBottom_toTopOf="@id/ageLabel"
+            app:layout_constraintLeft_toLeftOf="@id/guideline_vertical_1"
+            app:layout_constraintTop_toBottomOf="@id/lastNameLabel" />
+
+        <TextView
+            android:id="@+id/ageLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/age"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/age"
+            app:layout_constraintLeft_toLeftOf="@id/guideline_vertical_1"
+            app:layout_constraintTop_toBottomOf="@id/lastName" />
+
+        <TextView
+            android:id="@+id/age"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:text="@{String.valueOf(user.age)}"
+            app:layout_constraintBottom_toTopOf="@id/genderLabel"
+            app:layout_constraintLeft_toLeftOf="@id/guideline_vertical_1"
+            app:layout_constraintTop_toBottomOf="@id/ageLabel" />
+
+        <TextView
+            android:id="@+id/genderLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gender"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/gender"
+            app:layout_constraintLeft_toLeftOf="@id/guideline_vertical_1"
+            app:layout_constraintTop_toBottomOf="@id/age" />
+
+        <TextView
+            android:id="@+id/gender"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:text="@{user.gender}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/guideline_vertical_1"
+            app:layout_constraintTop_toBottomOf="@id/genderLabel" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
