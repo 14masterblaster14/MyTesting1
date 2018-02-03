@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.a6universalnavigationdrawer.SortFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#cfd8dc"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <ImageView
+            android:id="@+id/btn_filter_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <!--  app:srcCompat="@drawable/cancel_icon" -->
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="25dp"
+            android:text="@string/filter_by"
+            android:textSize="20dp" />
+        <!-- android:textColor="@color/theme_dark_text_color" -->
+    </LinearLayout>
+
+</LinearLayout>

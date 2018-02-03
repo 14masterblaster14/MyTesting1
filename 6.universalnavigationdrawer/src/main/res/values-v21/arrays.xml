@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="main_activity_tabs">
+        <item>Primary Mails</item>
+        <item>Secondary Mails</item>
+    </string-array>
+</resources>

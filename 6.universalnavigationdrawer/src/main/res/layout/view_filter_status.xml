@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RadioButton
+            android:id="@+id/btn_single"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:padding="14dp"
+            android:text="@string/single" />
+
+        <RadioButton
+            android:id="@+id/btn_committed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:padding="14dp"
+            android:text="@string/committed" />
+
+        <RadioButton
+            android:id="@+id/btn_married"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:padding="14dp"
+            android:text="@string/married" />
+
+        <RadioButton
+            android:id="@+id/btn_separated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:padding="14dp"
+            android:text="@string/separated" />
+
+        <RadioButton
+            android:id="@+id/btn_divorced"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:padding="14dp"
+            android:text="@string/divorced" />
+
+        <RadioButton
+            android:id="@+id/btn_complicated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:padding="14dp"
+            android:text="@string/complicated" />
+
+    </RadioGroup>
+
+</LinearLayout>
