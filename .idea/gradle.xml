@@ -12,8 +12,13 @@
             <option value="$PROJECT_DIR$/1.constraintsandbutterknife" />
             <option value="$PROJECT_DIR$/2.retrofithttp" />
             <option value="$PROJECT_DIR$/3.retrofithttprxjava" />
+            <option value="$PROJECT_DIR$/4.imagehandelling" />
+            <option value="$PROJECT_DIR$/5.recyclerviewanimations" />
+            <option value="$PROJECT_DIR$/6.universalnavigationdrawer" />
+            <option value="$PROJECT_DIR$/7.1expandablelistview" />
+            <option value="$PROJECT_DIR$/7.2expandablerecyclerview" />
+            <option value="$PROJECT_DIR$/8.databinding" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/myapplication" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

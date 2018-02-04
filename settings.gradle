@@ -1,1 +1,1 @@
-include ':app', ':1.constraintsandbutterknife', ':2.retrofithttp', ':3.retrofithttprxjava', ':myapplication', ':1.1butterknifedemo'
+include ':app', ':1.constraintsandbutterknife', ':2.retrofithttp', ':3.retrofithttprxjava', ':1.1butterknifedemo', ':4.imagehandelling', ':5.recyclerviewanimations', ':6.universalnavigationdrawer', ':7.1expandablelistview', ':7.2expandablerecyclerview', ':8.databinding'

@@ -18,25 +18,25 @@ import java.util.List;
 public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     private Context context;
-    private List<String> expandleListGroupTitle;
+    private List<String> expandableListGroupTitle;
     private HashMap<String, List<String>> expandableListDetails;
 
-    public ExpandableListAdapter(Context context, List<String> expandleListGroupTitle, HashMap<String, List<String>> expandableListDetails) {
+    public ExpandableListAdapter(Context context, List<String> expandableListGroupTitle, HashMap<String, List<String>> expandableListDetails) {
         this.context = context;
-        this.expandleListGroupTitle = expandleListGroupTitle;
+        this.expandableListGroupTitle = expandableListGroupTitle;
         this.expandableListDetails = expandableListDetails;
     }
 
     @Override
     public int getGroupCount() {
         //return 0;
-        return this.expandleListGroupTitle.size();
+        return this.expandableListGroupTitle.size();
     }
 
     @Override
     public Object getGroup(int groupPosition) {
         //return null;
-        return this.expandleListGroupTitle.get(groupPosition);
+        return this.expandableListGroupTitle.get(groupPosition);
     }
 
     @Override
@@ -64,14 +64,14 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     @Override
     public int getChildrenCount(int groupPosition) {
         //return 0;
-        return this.expandableListDetails.get(this.expandleListGroupTitle.get(groupPosition)).size();
+        return this.expandableListDetails.get(this.expandableListGroupTitle.get(groupPosition)).size();
     }
 
 
     @Override
     public Object getChild(int groupPosition, int childPosition) {
         //return null;
-        return this.expandableListDetails.get(this.expandleListGroupTitle.get(groupPosition)).get(childPosition);
+        return this.expandableListDetails.get(this.expandableListGroupTitle.get(groupPosition)).get(childPosition);
     }
 
     @Override

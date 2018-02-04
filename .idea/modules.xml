@@ -6,9 +6,14 @@
       <module fileurl="file://$PROJECT_DIR$/1.constraintsandbutterknife/1.constraintsandbutterknife.iml" filepath="$PROJECT_DIR$/1.constraintsandbutterknife/1.constraintsandbutterknife.iml" />
       <module fileurl="file://$PROJECT_DIR$/2.retrofithttp/2.retrofithttp.iml" filepath="$PROJECT_DIR$/2.retrofithttp/2.retrofithttp.iml" />
       <module fileurl="file://$PROJECT_DIR$/3.retrofithttprxjava/3.retrofithttprxjava.iml" filepath="$PROJECT_DIR$/3.retrofithttprxjava/3.retrofithttprxjava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/4.imagehandelling/4.imagehandelling.iml" filepath="$PROJECT_DIR$/4.imagehandelling/4.imagehandelling.iml" />
+      <module fileurl="file://$PROJECT_DIR$/5.recyclerviewanimations/5.recyclerviewanimations.iml" filepath="$PROJECT_DIR$/5.recyclerviewanimations/5.recyclerviewanimations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/6.universalnavigationdrawer/6.universalnavigationdrawer.iml" filepath="$PROJECT_DIR$/6.universalnavigationdrawer/6.universalnavigationdrawer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/7.1expandablelistview/7.1expandablelistview.iml" filepath="$PROJECT_DIR$/7.1expandablelistview/7.1expandablelistview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/7.2expandablerecyclerview/7.2expandablerecyclerview.iml" filepath="$PROJECT_DIR$/7.2expandablerecyclerview/7.2expandablerecyclerview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/8.databinding/8.databinding.iml" filepath="$PROJECT_DIR$/8.databinding/8.databinding.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyTesting1.iml" filepath="$PROJECT_DIR$/MyTesting1.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/myapplication/myapplication.iml" filepath="$PROJECT_DIR$/myapplication/myapplication.iml" />
     </modules>
   </component>
 </project>
