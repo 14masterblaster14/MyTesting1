@@ -1,5 +1,6 @@
 package com.example.a6universalnavigationdrawer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -100,9 +101,18 @@ public class NavigationDrawerActivity extends BaseActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
 
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .setCustomAnimations(R.anim.slide_in_right, 0, 0, R.anim.slide_out_right)
+                    .replace(R.id.container_navigation_activity, new ImportFragment())
+                    .addToBackStack(ImportFragment.class.getSimpleName())
+                    .commit();
+
+        } else if (id == R.id.nav_gallery) {
+            startActivity(new Intent(this, GalleryActivity.class));
         } else if (id == R.id.nav_slideshow) {
+            startActivity(new Intent(this, SlideShowActivity.class));
 
         } else if (id == R.id.nav_manage) {
 

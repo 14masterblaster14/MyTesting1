@@ -6,5 +6,6 @@
     <color name="colorText">#111111</color>
     <color name="colorTransparent">#ffffff</color>
     <color name="colorBackground">#cfd8dc</color>
+    <color name="colorOrangeBackground">#ffcc80</color>
 
 </resources>

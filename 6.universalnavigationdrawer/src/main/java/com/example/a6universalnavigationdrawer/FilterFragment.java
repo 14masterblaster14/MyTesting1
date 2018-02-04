@@ -32,14 +32,14 @@ public class FilterFragment extends Fragment {
         final View rootView = inflater.inflate(R.layout.fragment_filter, container, false);
         container_filter = rootView.findViewById(R.id.filter_fragments_container);
 
-        rootView.findViewById(R.id.btn_filter_close).setOnClickListener(new View.OnClickListener() {
+        /*rootView.findViewById(R.id.btn_filter_close).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //getActivity().getSupportFragmentManager().popBackStack();
-                //getActivity().getSupportFragmentManager().popBackStackImmediate();
-                //Toast.makeText(getActivity(),"Close the Filter Fragment",Toast.LENGTH_SHORT);
+                getActivity().getSupportFragmentManager().popBackStack();
+                getActivity().getSupportFragmentManager().popBackStackImmediate();
+                Toast.makeText(getActivity(),"Close the Filter Fragment",Toast.LENGTH_SHORT);
             }
-        });
+        });*/
 
         rootView.findViewById(R.id.btn_filter_location).setOnClickListener(new View.OnClickListener() {
             @Override
