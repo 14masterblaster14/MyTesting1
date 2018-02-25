@@ -2,30 +2,30 @@ package com.example.a5recyclerviewanimations;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 
 public class MyCustomAdapter extends RecyclerView.Adapter<MyCustomAdapter.MyViewHolder> {
 
+    protected RecyclerViewClickListener recyclerViewClickListener;
     private Context context;
-
     private ArrayList<Information> data;
-
     private LayoutInflater inflater;
-
     private int previousPosition = 0;
 
-    public MyCustomAdapter(Context context, ArrayList<Information> data) {
+    public MyCustomAdapter(Context context, ArrayList<Information> data, RecyclerViewClickListener listener) {
 
         this.context = context;
         this.data = data;
+        this.recyclerViewClickListener = listener;
         inflater = LayoutInflater.from(context);
     }
 
@@ -41,9 +41,9 @@ public class MyCustomAdapter extends RecyclerView.Adapter<MyCustomAdapter.MyView
 
     @Override
     public void onBindViewHolder(MyViewHolder myViewHolder, final int position) {
-
-        myViewHolder.textview.setText(data.get(position).title);
-        myViewHolder.imageView.setImageResource(data.get(position).imageId);
+        final Information information = data.get(position);
+        myViewHolder.textview.setText(information.title);
+        myViewHolder.imageView.setImageResource(information.imageId);
 
         if (position > previousPosition) { // We are scrolling DOWN
 
@@ -62,7 +62,7 @@ public class MyCustomAdapter extends RecyclerView.Adapter<MyCustomAdapter.MyView
         final int currentPosition = position;
         final Information infoData = data.get(position);
 
-        myViewHolder.imageView.setOnClickListener(new View.OnClickListener() {
+       /* myViewHolder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -81,11 +81,14 @@ public class MyCustomAdapter extends RecyclerView.Adapter<MyCustomAdapter.MyView
 
                 return true;
             }
+        });*/
 
-
+        myViewHolder.linearLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recyclerViewClickListener.onItemClick(v, position);
+            }
         });
-
-
     }
 
     @Override
@@ -108,17 +111,31 @@ public class MyCustomAdapter extends RecyclerView.Adapter<MyCustomAdapter.MyView
         notifyItemInserted(position);
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder {
+    public interface RecyclerViewClickListener {
 
+        void onItemClick(View view, int position);
+    }
+
+    class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        LinearLayout linearLayout;
         TextView textview;
         ImageView imageView;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-
+            linearLayout = itemView.findViewById(R.id.linear_layout);
             textview = itemView.findViewById(R.id.txv_row);
             imageView = itemView.findViewById(R.id.img_row);
+            linearLayout.setOnClickListener(this);
+        }
 
+        @Override
+        public void onClick(View v) {
+            if (recyclerViewClickListener != null) {
+                Log.i("@MasterBlaster", "ClickListener : ");
+
+                recyclerViewClickListener.onItemClick(v, getLayoutPosition());
+            }
         }
     }
 }

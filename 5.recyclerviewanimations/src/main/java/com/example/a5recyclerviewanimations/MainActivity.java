@@ -9,11 +9,12 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MyCustomAdapter.RecyclerViewClickListener {
 
     RecyclerView recyclerView;
     MyCustomAdapter adapter;
@@ -22,10 +23,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -34,8 +35,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        recyclerView = (RecyclerView) findViewById(R.id.recycleView);
-        adapter = new MyCustomAdapter(this, Data.getData());
+        recyclerView = findViewById(R.id.recycleView);
+        adapter = new MyCustomAdapter(this, Data.getData(), this);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this)); // Vertical Orientation By Default
     }
@@ -86,5 +87,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemClick(View view, int position) {
+        Information selectedInformation = (Data.getData()).get(position);
+        int selectedImageId = selectedInformation.getImageId();
+        String selectedTitle = selectedInformation.getTitle();
+        Log.i("@MasterBlaster", "selectedItem : " + selectedInformation);
+        Log.i("@MasterBlaster", "selectedImageId : " + selectedImageId);
+        Log.i("@MasterBlaster", "selectedTitle : " + selectedTitle);
     }
 }
