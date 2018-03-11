@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.a8databinding.databinding.ActivityMainBinding;
-import com.example.a8databinding.databinding.ContentMainBinding;
 
 
 /*
@@ -41,8 +40,8 @@ import com.example.a8databinding.databinding.ContentMainBinding;
 
 */
 public class MainActivity extends AppCompatActivity {
-
-    TextView textview;
+    private ActivityMainBinding activityMainBinding;
+    private TextView textview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,8 +77,8 @@ public class MainActivity extends AppCompatActivity {
 
         //---- After Data Binding ------//
         ///*
-        ActivityMainBinding activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        setSupportActionBar(activityMainBinding.toolbar);
+        activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        setSupportActionBar(activityMainBinding.includedToolbar.toolbar);
         activityMainBinding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,14 +86,13 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        final ContentMainBinding contentMainBinding = DataBindingUtil.setContentView(this, R.layout.content_main);
-        contentMainBinding.updateButton.setOnClickListener(new View.OnClickListener() {
+        activityMainBinding.includedContentMain.updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                contentMainBinding.textView2.setText("Welcome !!!");
+                activityMainBinding.includedContentMain.textView2.setText("Welcome !!!");
             }
         });
-        contentMainBinding.UserActivityButton.setOnClickListener(new View.OnClickListener() {
+        activityMainBinding.includedContentMain.UserActivityButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, UserActivity.class));

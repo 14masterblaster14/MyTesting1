@@ -7,10 +7,13 @@
     <data>
 
         <variable
-            name="user"
-            type="com.example.a8databinding.User" />
-    </data>
+            name="user1"
+            type="com.example.a8databinding.User1" />
 
+        <variable
+            name="activity"
+            type="com.example.a8databinding.MainActivity" />
+    </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
@@ -39,7 +42,7 @@
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:background="@color/background"
-            android:text="@{user.firstName}"
+            android:text="@{user1.firstName}"
             app:layout_constraintBottom_toTopOf="@id/lastNameLabel"
             app:layout_constraintLeft_toLeftOf="@id/guideline_vertical_1"
             app:layout_constraintTop_toBottomOf="@id/firstNameLabel" />
@@ -60,7 +63,7 @@
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:background="@color/background"
-            android:text="@{user.lastName}"
+            android:text="@{user1.lastName}"
             app:layout_constraintBottom_toTopOf="@id/ageLabel"
             app:layout_constraintLeft_toLeftOf="@id/guideline_vertical_1"
             app:layout_constraintTop_toBottomOf="@id/lastNameLabel" />
@@ -80,7 +83,7 @@
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:background="@color/background"
-            android:text="@{String.valueOf(user.age)}"
+            android:text="@{String.valueOf(user1.age)}"
             app:layout_constraintBottom_toTopOf="@id/genderLabel"
             app:layout_constraintLeft_toLeftOf="@id/guideline_vertical_1"
             app:layout_constraintTop_toBottomOf="@id/ageLabel" />
@@ -100,7 +103,7 @@
             android:layout_width="140dp"
             android:layout_height="wrap_content"
             android:background="@color/background"
-            android:text="@{user.gender}"
+            android:text="@{user1.gender}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="@id/guideline_vertical_1"
             app:layout_constraintTop_toBottomOf="@id/genderLabel" />

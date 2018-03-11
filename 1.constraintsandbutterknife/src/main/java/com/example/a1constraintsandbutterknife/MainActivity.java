@@ -1,5 +1,6 @@
 package com.example.a1constraintsandbutterknife;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -83,6 +84,10 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.revert_button:
                 centerTextView.setText("Hello World!");
+                break;
+
+            case R.id.nextActivity:
+                startActivity(new Intent(this, NextActivity.class));
                 break;
 
         }

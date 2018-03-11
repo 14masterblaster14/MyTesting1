@@ -24,7 +24,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
             <TextView
@@ -52,6 +52,15 @@
                 android:layout_margin="7dp"
                 android:padding="@dimen/activity_vertical_margin"
                 android:text="@string/user_activity"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/goToFragment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="7dp"
+                android:padding="@dimen/activity_vertical_margin"
+                android:text="Go to New Fragment"
                 android:textStyle="bold" />
 
         </LinearLayout>

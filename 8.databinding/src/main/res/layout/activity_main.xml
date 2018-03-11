@@ -11,7 +11,7 @@
         <!--
              xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
-            -->
+
         <android.support.design.widget.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,8 +25,15 @@
                 app:popupTheme="@style/AppTheme.PopupOverlay" />
 
         </android.support.design.widget.AppBarLayout>
+-->
 
-        <include layout="@layout/content_main" />
+        <include
+            android:id="@+id/included_toolbar"
+            layout="@layout/toolbar" />
+
+        <include
+            android:id="@+id/included_content_main"
+            layout="@layout/content_main" />
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
