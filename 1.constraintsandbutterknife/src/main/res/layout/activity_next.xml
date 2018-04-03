@@ -250,6 +250,7 @@
         app:layout_constraintBaseline_toBaselineOf="@id/label_K"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/label_K" />
+
     <!--  Packed chain with Bias -->
 
     <TextView
@@ -285,5 +286,44 @@
         app:layout_constraintBaseline_toBaselineOf="@id/label_N"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/label_N" />
+
+    <!--  Test -->
+
+    <TextView
+        android:id="@+id/label_X"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/highlighter"
+        android:text="Chain : X"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.55" />
+
+    <TextView
+        android:id="@+id/label_Y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:background="@color/highlighter"
+        android:padding="4dp"
+        android:text="Chain : Y"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_X"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@id/label_X"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/label_Z"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/highlighter"
+        android:text="Chain : Z"
+        app:layout_constraintBaseline_toBaselineOf="@id/label_X"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_Y" />
+
 
 </android.support.constraint.ConstraintLayout>
